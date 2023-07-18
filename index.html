@@ -4,48 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="#" rel="icon" type="image/x-icon">
 </head>
 <body>
-    <div class="game_title"><h1>Tic Tac Toe</h1></div>
     <div class="canvas">
-        <div class="init-game" id="init-game">
-            <p>Player1 Sign: <input type="text" id="p1_sign" maxlength="1" onkeyup="toggle_start.call(this)"></p>
-            <button type="button" onclick="start_btn.call()" id="start_btn" disabled>Start</button>
-            <p style="color: red;" id="inputWarning">
-                Please enter &#39x&#39 or &#39o&#39 as input
-            </p>
+        <div class="scores">
+            <div id="highscoreBox">High Score: <span id="displayHighscore"></span></div>
+            <div id="scoreBox">Score: <span id="displayScore">0</span></div>
         </div>
-        <div class="game-status" id="game-status">
-            Player1 Sign: <span id="p1_sign_display"></span> <br>
-            Player2 Sign: <span id="p2_sign_display"></span> <br>
-            <div id="current_player">
-                <br>
-                Current Player: <span id="current_player_display"></span>
-            </div>
+        <div id="box"></div>
+        <div id="gameControl">
+            <div id="gameoverDisplay">Game Over</div>
+            <div id="playBtn" onclick="play()">Play</div>
         </div>
-        <div class="winner" id="winner">
-            <h1>Game Over</h1>
-            <div id="winner_desc">
-                <h3 id="who_win"></h3>
-                <button type="button" onclick="location.reload()" id="play_again">Play Again</button>
-            </div>
-        </div>
+        <div id="instructions">Press any arrow key to move!</div>
 
-        <div class="container" id="container">
-            <button class="items" onclick="btn.call(this)"></button>
-            <button class="items" onclick="btn.call(this)"></button>
-            <button class="items" onclick="btn.call(this)"></button>
-            <button class="items" onclick="btn.call(this)"></button>
-            <button class="items" onclick="btn.call(this)"></button>
-            <button class="items" onclick="btn.call(this)"></button>
-            <button class="items" onclick="btn.call(this)"></button>
-            <button class="items" onclick="btn.call(this)"></button>
-            <button class="items" onclick="btn.call(this)"></button>
+        <div id="gameControls">
+            <div id="upkey" class="controlItems" onclick="moveBtn.call(this)">Up</div>
+            <div class="secondRow">
+                <div id="leftkey" class="controlItems" onclick="moveBtn.call(this)">Left</div>
+                <div id="downkey" class="controlItems" onclick="moveBtn.call(this)">Down</div>
+                <div id="rightkey" class="controlItems" onclick="moveBtn.call(this)">Right</div>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
